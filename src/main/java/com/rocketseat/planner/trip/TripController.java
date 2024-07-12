@@ -147,7 +147,7 @@ public class TripController {
 
     // LINKS
 
-    @GetMapping("/{id}/activities")
+    @GetMapping("/{id}/links")
     public ResponseEntity<List<LinkData>> getAllLinks(@PathVariable UUID id){
         List<LinkData> linkList = this.linkService.getAllLinksFromId(id);
 
