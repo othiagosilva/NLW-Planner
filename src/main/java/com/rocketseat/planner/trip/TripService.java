@@ -26,6 +26,13 @@ public class TripService {
 
     public TripCreateResponse updateTrip(UUID id, TripRequestPayload payload) {
         Trip rawTrip = this.repository.findById(id).get();
+        LocalDateTime endsAt = LocalDateTime.parse(payload.ends_at(), DateTimeFormatter.ISO_DATE_TIME);
+        LocalDateTime startsAt = LocalDateTime.parse(payload.starts_at(), DateTimeFormatter.ISO_DATE_TIME);
+
+        if (endsAt.isBefore(startsAt)) {
+            throw new RuntimeException("Start date must be before end date");
+        }
+
         rawTrip.setStartsAt(LocalDateTime.parse(payload.starts_at(), DateTimeFormatter.ISO_DATE_TIME));
         rawTrip.setEndsAt(LocalDateTime.parse(payload.ends_at(), DateTimeFormatter.ISO_DATE_TIME));
         rawTrip.setDestination(payload.destination());
