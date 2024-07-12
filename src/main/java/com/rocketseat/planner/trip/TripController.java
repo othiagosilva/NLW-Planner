@@ -51,6 +51,10 @@ public class TripController {
     public ResponseEntity<TripCreateResponse> createTrip(@RequestBody TripRequestPayload payload){
         Trip newTrip = new Trip(payload);
 
+        if (newTrip.getStartsAt().isAfter(newTrip.getEndsAt())){
+            throw new RuntimeException("Start date must be before end date");
+    }
+
         this.repository.save(newTrip);
         this.participantService.registerParticipantsToEvent(payload.emails_to_invite(), newTrip);
 
