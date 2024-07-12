@@ -15,6 +15,11 @@ public class TripService {
 
     public Trip registerTrip(TripRequestPayload payload) {
         Trip newTrip = new Trip(payload);
+
+        if (newTrip.getStartsAt().isAfter(newTrip.getEndsAt())){
+            throw new RuntimeException("Start date must be before end date");
+        }
+
         this.repository.save(newTrip);
         return newTrip;
     }
