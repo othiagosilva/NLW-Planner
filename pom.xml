@@ -98,6 +98,19 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<sourceDirectory>backend/src/main/java</sourceDirectory>
+        <testSourceDirectory>backend/src/test/java</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>backend/src/main/resources</directory>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>backend/src/test/resources</directory>
+            </testResource>
+        </testResources>
+        <directory>target</directory>
 	</build>
 
 </project>
