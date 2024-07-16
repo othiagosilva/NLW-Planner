@@ -45,7 +45,7 @@ public class TripController {
 
     @Autowired
     public TripRepository repository;
-
+    
     //TRIPS
 
     @PostMapping
