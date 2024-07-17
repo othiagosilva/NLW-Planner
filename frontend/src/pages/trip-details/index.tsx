@@ -10,15 +10,15 @@ import { DateRange } from "react-day-picker";
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
-  const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
+  const [isTripInputOpen, setisTripInputOpen] = useState(false)
   const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange>()
 
-  function openGuestsInput() {
-    setIsGuestsInputOpen(true)
+  function openTripInput() {
+    setisTripInputOpen(true)
   }
 
-  function closeGuestsInput() {
-    setIsGuestsInputOpen(false)
+  function closeTripInput() {
+    setisTripInputOpen(false)
   }
 
   function openCreateActivityModal() {
@@ -32,9 +32,9 @@ export function TripDetailsPage() {
   return (
     <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">
       <DestinationAndDateHeader 
-        isGuestsInputOpen={isGuestsInputOpen}
-        openGuestsInput={openGuestsInput}
-        closeGuestsInput={closeGuestsInput}
+        isTripInputOpen={isTripInputOpen}
+        openTripInput={openTripInput}
+        closeTripInput={closeTripInput}
         eventStartAndEndDates={eventStartAndEndDates}
         setEventStartAndEndDates={setEventStartAndEndDates}
       />
