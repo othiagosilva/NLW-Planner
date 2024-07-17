@@ -5,10 +5,21 @@ import { DestinationAndDateHeader } from "./destination-and-date-header";
 import { ImportantLinks } from "./important-links";
 import { Guests } from "./guests";
 import { CreateActivityModal } from "./create-activity-modal";
+import { DateRange } from "react-day-picker";
 ;
 
 export function TripDetailsPage() {
   const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] = useState(false)
+  const [isGuestsInputOpen, setIsGuestsInputOpen] = useState(false)
+  const [eventStartAndEndDates, setEventStartAndEndDates] = useState<DateRange>()
+
+  function openGuestsInput() {
+    setIsGuestsInputOpen(true)
+  }
+
+  function closeGuestsInput() {
+    setIsGuestsInputOpen(false)
+  }
 
   function openCreateActivityModal() {
     setIsCreateActivityModalOpen(true)
@@ -20,7 +31,13 @@ export function TripDetailsPage() {
 
   return (
     <div className="max-w-6xl px-6 py-10 mx-auto space-y-8">
-      <DestinationAndDateHeader />
+      <DestinationAndDateHeader 
+        isGuestsInputOpen={isGuestsInputOpen}
+        openGuestsInput={openGuestsInput}
+        closeGuestsInput={closeGuestsInput}
+        eventStartAndEndDates={eventStartAndEndDates}
+        setEventStartAndEndDates={setEventStartAndEndDates}
+      />
 
       <main className="flex gap-16 px-4">
         <div className="flex-1 space-y-6">
