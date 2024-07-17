@@ -19,18 +19,18 @@ interface Trip {
 }
 
 interface DestinationAndDateHeaderProps {
-  isGuestsInputOpen: boolean
+  isTripInputOpen: boolean
   eventStartAndEndDates?: DateRange
-  openGuestsInput: () => void
-  closeGuestsInput: () => void
+  openTripInput: () => void
+  closeTripInput: () => void
   setEventStartAndEndDates: (eventStartAndEndDates: DateRange | undefined) => void
 }
 
 export function DestinationAndDateHeader({
-  isGuestsInputOpen,
+  isTripInputOpen,
   eventStartAndEndDates,
-  openGuestsInput,
-  closeGuestsInput,
+  openTripInput,
+  closeTripInput,
   setEventStartAndEndDates
 }: DestinationAndDateHeaderProps) {
 
@@ -94,7 +94,7 @@ export function DestinationAndDateHeader({
 
       try {
         await api.put(`/trips/${tripId}`, updatedTrip);
-        closeGuestsInput();
+        closeTripInput();
       } catch (error) {
         console.error("Erro ao atualizar a viagem:", error);
       }
@@ -105,9 +105,9 @@ export function DestinationAndDateHeader({
     <div className="h-16 bg-zinc-900 px-4 rounded-xl flex items-center shadow-shape gap-3">
       <div className="flex items-center gap-2 flex-1">
         <MapPin className='size-5 text-zinc-400' />
-        {isGuestsInputOpen ? (
+        {isTripInputOpen ? (
           <input 
-            disabled={!isGuestsInputOpen} 
+            disabled={!isTripInputOpen} 
             type="text" 
             className="bg-transparent placeholder-zinc-400 text-lg outline-none flex-1" 
             placeholder="Para onde você vai?"
@@ -121,7 +121,7 @@ export function DestinationAndDateHeader({
         
       </div>
 
-      <button onClick={openDatePicker} disabled={!isGuestsInputOpen} className="flex items-center gap-2 text-left w-[240px]">
+      <button onClick={openDatePicker} disabled={!isTripInputOpen} className="flex items-center gap-2 text-left w-[240px]">
         <Calendar className='size-5 text-zinc-400' />
         <span className="text-zinc-400 text-lg w-40 flex-1">
           {displayedDate}
@@ -149,7 +149,7 @@ export function DestinationAndDateHeader({
       <div className='w-px h-6 bg-zinc-800'>
 
       </div>
-      {isGuestsInputOpen ? (
+      {isTripInputOpen ? (
         <Button onClick={handleConfirm} variant="primary">
         Confirmar
         <ArrowRight className='size-5' />
@@ -157,7 +157,7 @@ export function DestinationAndDateHeader({
         
       ) :
         (
-          <Button onClick={openGuestsInput} variant="secondary">
+          <Button onClick={openTripInput} variant="secondary">
           Alterar Local e Data
           <Settings2 className='size-5' />
           </Button>
