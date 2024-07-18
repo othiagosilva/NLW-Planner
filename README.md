@@ -30,7 +30,7 @@ React application with 2 pages:
 
 ## Functionalities developed by me:
 ### Back End
-- Swagger Documentation using the ``` springdoc-openapi-starter-webmvc-ui ```
+- [Swagger Documentation](https://github.com/othiagosilva/NLW-Planner/commit/b014edd0a8177418ed6754b28fd4f1e1bc941cc6) using the ``` springdoc-openapi-starter-webmvc-ui ```
 - [Date validation](https://github.com/othiagosilva/NLW-Planner/commit/2ca3c88af9e48fb017b4b7b3c1332749604dc75f)
 - [TripService creation](https://github.com/othiagosilva/NLW-Planner/commit/047726d12029af28a16acb084feff8d75b2ac368)
 - [Tests with JUnit and Mockito](https://github.com/othiagosilva/NLW-Planner/commit/981299c52c680f1096a0ee00486c4130e3b206fd)
@@ -39,7 +39,7 @@ React application with 2 pages:
 Finished the Trip Detail page with all functionalities working:
 - [Alter destination and date](https://github.com/othiagosilva/NLW-Planner/commit/797395abf22b498421d3c489ae6d67dd16f200b0)
 - [Manage guests](https://github.com/othiagosilva/NLW-Planner/commit/e8660b8402944a1427619eff026b878dcf96df8d)
-- Link register
+- [Link register](https://github.com/othiagosilva/NLW-Planner/commit/e6504812159fcc8f0fd28708cccb60f56ce0ec42)
 
 ### DevOps
 - [Implementation of CI through GitHub Actions](https://github.com/othiagosilva/NLW-Planner/commit/667ebfd5d9bb16cc2b75f39ad9fa88cdb524c0f3)
