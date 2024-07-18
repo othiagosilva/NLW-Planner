@@ -18,7 +18,6 @@ export function Activities() {
   useEffect(() => {
     api.get(`/trips/${tripId}/activities`).then(response => {
       setActivities(response.data);
-      console.log(response.data);
     });
   }, [tripId]);
 
